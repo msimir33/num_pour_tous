@@ -1,0 +1,18 @@
+<h1>Liste des annonces</h1>
+
+<nav>
+    <a href="<?= url('/posts/create') ?>" class="btn btn-primary">Ajouter une annonce</a>
+</nav>
+
+<ul class="list-unstyled">
+    <?php foreach ($posts as $post) :?>
+        <li>
+            <article>
+                <header>
+                    <h2><a href="<?= url('/posts/show?id=' . $post['id']) ?>"><?= $post['title'] ?></a></h2>
+                </header>
+                <?= $post['post_content'] ?>
+            </article>
+        </li>
+    <?php endforeach ?>
+</ul>

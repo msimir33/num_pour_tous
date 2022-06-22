@@ -39,7 +39,8 @@ table sessions (session_id, session_name, session_debutdate, session_enddate, tr
 
 
 
-
+créer route et controller pour chaque page créée
+rajouter mot de passe dans fichier database
 lancer le projet : page d'accueil...
 commencer par l'inscription et connexion
 reprendre les derniers exos comme base

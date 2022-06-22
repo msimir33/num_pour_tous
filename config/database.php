@@ -2,7 +2,7 @@
 
 return [
     'host' => 'db.3wa.io',
-    'dbname' => 'cedricleclinche_events',
-    'user' => 'cedricleclinche',
-    'password' => 'eb094434df8b9e10f67b5c650f7bed6c'
+    'dbname' => 'samiraitali_numpourtous',
+    'user' => 'samiraitali',
+    'password' => 'd746f152f8fb18ecf8c754bb59872aae'
 ];

@@ -5,20 +5,20 @@ return [
         'App\Controllers\HomeController',
         'index'
     ],
-    '/events' => [
-        'App\Controllers\EventController',
+    '/posts' => [
+        'App\Controllers\PostController',
         'index'
     ],
-    '/events/show' => [
-        'App\Controllers\EventController',
+    '/posts/show' => [
+        'App\Controllers\PostController',
         'show'
     ],
-    '/events/create' => [
-        'App\Controllers\EventController',
+    '/posts/create' => [
+        'App\Controllers\PostController',
         'create'
     ],
-    '/events/store' => [
-        'App\Controllers\EventController',
+    '/posts/store' => [
+        'App\Controllers\PostController',
         'store'
     ],
     '/register' => [
