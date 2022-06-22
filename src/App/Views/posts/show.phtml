@@ -1,0 +1,7 @@
+<article>
+    <header>
+        <h1><?= htmlentities($post['title']) ?></h1>
+        <small>Créé le <?= date_create($post['post_creation_date'])->format('d/m/Y') ?></small>
+    </header>
+    <?= htmlentities($post['post_creation_date']) ?>
+</article>

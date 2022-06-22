@@ -1,0 +1,18 @@
+15/06/2022 10:23:21 : L'événement n'existe pas
+15/06/2022 10:23:27 : La route n'existe pas
+15/06/2022 14:55:04 : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'test' for key 'username'
+15/06/2022 15:08:10 : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'test' for key 'username'
+15/06/2022 15:08:17 : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'test' for key 'username'
+15/06/2022 15:56:03 : La route n'existe pas
+16/06/2022 13:38:02 : La route n'existe pas
+16/06/2022 13:38:34 : La route n'existe pas
+16/06/2022 13:38:46 : La route n'existe pas
+16/06/2022 13:38:49 : La route n'existe pas
+16/06/2022 13:38:49 : La route n'existe pas
+16/06/2022 13:38:49 : La route n'existe pas
+16/06/2022 13:38:49 : La route n'existe pas
+16/06/2022 13:38:50 : La route n'existe pas
+16/06/2022 13:38:50 : La route n'existe pas
+16/06/2022 13:38:50 : La route n'existe pas
+16/06/2022 13:38:50 : La route n'existe pas
+16/06/2022 13:38:53 : La route n'existe pas

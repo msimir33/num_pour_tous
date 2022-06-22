@@ -1,0 +1,45 @@
+"Numérique pour tous" est une assocation à but non lucrative créée pour fournir des appareils numériques aux 
+familles qui n'en ont pas, et pour former et assister les familles à leur utilisation quotidienne, tout ça gratuitement.
+
+Depuis quelques années maintenant, de plus en plus d'organismes publiques et privés ont décidé de créer
+des interfaces numériques accessibles depuis un simple ordinateur afin que tout citoyen puisse accomplir 
+leurs démarches en toute autonomie sans avoir à se déplacer. Beaucoup d'entre ces organismes sont passés au 
+100% numérique et ne proposent plus d'effectuer de démarches papiers.
+
+Nombre de foyers actuellement ne possèdent pas d'appareils numériques leur permettant d'effectuer de simples
+démarches. Ils doivent souvent se déplacer dans les maisons de service publique dans lesquelles il y a beaucoup d'attente et avec des horaires de fermeture.
+
+Nous récupérons des ordinateurs donnés gracieusement ainsi que des imprimantes, nous les réhabilitons si nécessaire et 
+les donnons gratuitement aux foyers nécessiteux. Nous les donnons sous forme de pack "ordinateur + imprimante". Nous proposons aussi aux familles des formations gratuites liées à leur utilisation.
+
+En résumé :
+Notre site internet comporte des annonces de packs réservables en ligne et à venir récupérer. Les foyers peuvent aussi s'inscrire à 2 formations complémentaires gratuites s'ils le souhaitent :
+- formation à l'utilisation d'un ordinateur, d'une imprimante et d'internet (15 minutes)
+- formation à l'utilisation Word (15 minutes)
+Ces deux prestations sont gratuites à condition que le revenu fiscal de référence du foyer soit inférieur à 15 000€, preuve à l'appui.
+
+
+LISTE DES FONCTIONNALITES DU SITE
+- Créer un compte utilisateur
+- Créer un compte admin (admin seulement)
+- Créer une annonce pack (admin seulement)
+- Créer une session de formation (admin seulement)
+- Inscription à une session de formation
+- Réserver un pack
+
+BDD :
+
+table users (user_id, user_password, user_type [admin/customer], user_firstname, user_lastname, user_email, user_age, user_address, user_creation_date, user_income [<15000/an], user_hastaken_training [oui/non], user_hastaken_pack [oui/non])
+
+table posts (post_id, post_title, post_content, post_creation_date, post_isreserved, post_istaken, user_id)
+
+table trainings (training_id, training_name [ordinet/word])
+
+table sessions (session_id, session_name, session_debutdate, session_enddate, training_id, user_id)
+
+
+
+
+lancer le projet : page d'accueil...
+commencer par l'inscription et connexion
+reprendre les derniers exos comme base
