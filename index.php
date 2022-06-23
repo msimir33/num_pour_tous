@@ -44,9 +44,5 @@ try {
     } else {
         // http_response_code(500);
     }
-    
-    // Gestion de l'erreur
-    // Enregistrement dans un fichier de log : écriture dans un fichier log l'heure de l'erreur
-    file_put_contents('logs/application.log', date('d/m/Y H:i:s') . " : " . $e->getMessage() . "\n", FILE_APPEND);
-    exit();
+
 }

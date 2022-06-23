@@ -29,7 +29,7 @@ LISTE DES FONCTIONNALITES DU SITE
 
 BDD :
 
-table users (user_id, user_password, user_type [admin/client], user_name, user_email, user_age, user_address, user_creation_date, user_income [<15000/an], user_hastaken_training1 [oui/non], user_hastaken_training2 [oui/non] user_hastaken_pack [oui/non])
+table users (user_id, user_password, user_type [admin/client], user_name, user_email, user_age, user_address, user_creation_date, user_income [<15000/an], user_incomedoc, user_hastaken_training1 [oui/non], user_hastaken_training2 [oui/non] user_hastaken_pack [oui/non])
 
 table posts (post_id, post_title, post_content, post_creation_date, post_isreserved, post_istaken, user_id)
 

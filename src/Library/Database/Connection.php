@@ -36,7 +36,7 @@ class Connection
      * Exécute une requête SQL (INSERT, UPDATE, DELETE)
      * 
      */
-    public function execute(string $sql, ?array $parameters = null): string|false
+    public function execute(string $sql, ?array $parameters = null): string
     {
         $query = $this->pdo->prepare($sql);
         $query->execute($parameters);
