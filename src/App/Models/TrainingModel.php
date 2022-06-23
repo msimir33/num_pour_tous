@@ -4,44 +4,48 @@ namespace App\Models;
 
 use Library\Core\AbstractModel;
 
-class UserModel extends AbstractModel
+class TrainingModel extends AbstractModel
 {
-    /**
-     * Crée un utilisateur en base de données
-     * 
-     * @param array $data Les données de l'utilisateur à insérer
-     * @return ?int L'id de l'utilisateur créé ou null
-     */
-    public function create(array $data): ?int
+    public function findAll(): array
     {
-        $userId = $this->db->execute('INSERT INTO users (user_firstname, user_lastname, user_email, user_password) VALUES (:user_firstname, :user_lastname, :user_email, :user_password)', [
-            'user_firstname' => $data['user_firstname'],
-            'user_lastname' => $data['user_lastname'],
-            'user_email' => $data['user_email'],
-            'user_password' => $data['user_password']
-        ]);
+        return $this->db->getResults(
+            'SELECT training_id, training_title, training_content, training_startdate 
+            FROM trainings
+            ORDER BY training_startdate'
+        );
+    }
+    
+    public function find(int $id): ?array
+    {
+        $results = $this->db->getResults(
+            'SELECT training_id, training_title, training_content, training_startdate 
+            FROM trainings
+            WHERE training_id = :training_id', [
+                'training_id' => $training_id    
+            ]   
+        );
         
-        if ($userId === false) {
+        if (empty($results)) {
             return null;
         }
         
-        return $userId;
+        return $results[0];
     }
     
-    public function findByUserLastName(string $user_lastname): ?array
+    public function create(array $data): ?int
     {
-        $user = $this->db->getResults(
-            'SELECT user_id, user_firstname, user_lastname, user_email, user_password, user_creation_date 
-            FROM users
-            WHERE user_lastname = :user_lastname', [
-                'user_lastname' => $user_lastname    
+        $result = $this->db->execute(
+            'INSERT INTO trainings (training_title, training_content, training_startdate) VALUES (:training_title, :training_content, :training_startdate)', [
+                'training_title' => $data['training_title'],
+                'training_content' => $data['training_content'],
+                'training_startdate' => $data['training_startdate']
             ]
         );
         
-        if (empty($user)) {
+        if ($result === false) {
             return null;
         }
         
-        return $user[0];
+        return (int)$result;
     }
 }

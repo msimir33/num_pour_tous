@@ -23,12 +23,12 @@ class UserController extends AbstractController
         }
         
         $model = new UserModel();
-        $user = $model->findByUsername($_POST['username']);
+        $user = $model->findByUsername($_POST['user_name']);
         
         $errors = $this->validForm($_POST);
         
         if (! empty($user)) {
-            $errors['username'] = "Cet utilisateur existe déjà";
+            $errors['user_name'] = "Cet utilisateur existe déjà";
         }
         
         if (count($errors) > 0) {
@@ -37,9 +37,9 @@ class UserController extends AbstractController
         }
         
         $model->create([
-            'username' => $_POST['username'],
-            'email' => $_POST['email'],
-            'password' => password_hash($_POST['password'], PASSWORD_ARGON2ID)
+            'user_name' => $_POST['user_name'],
+            'user_email' => $_POST['user_email'],
+            'user_password' => password_hash($_POST['user_password'], PASSWORD_ARGON2ID)
         ]);
         
         $this->redirect('/');
@@ -49,12 +49,12 @@ class UserController extends AbstractController
     {
         $errors = [];
         
-        if (empty($data['username'])) {
-            $errors['username'] = "Le nom utilisateur ne doit pas être vide";    
+        if (empty($data['user_name'])) {
+            $errors['user_name'] = "Le nom utilisateur ne doit pas être vide";    
         }
         
-        if (strlen($data['password']) < 6) {
-            $errors['password'] = "Le mot de passe doit faire au-moins 6 caractères";
+        if (strlen($data['user_password']) < 6) {
+            $errors['user_password'] = "Le mot de passe doit faire au-moins 6 caractères";
         }
         
         return $errors;
@@ -76,19 +76,19 @@ class UserController extends AbstractController
         }
         
         $model = new UserModel();
-        $user = $model->findByUsername($_POST['username']);
+        $user = $model->findByUserName($_POST['user_name']);
         
         if ($user === null) {
             $_SESSION['error'] = [
-                'username' => 'Les identifiants sont incorrects'   
+                'user_name' => 'Les identifiants sont incorrects'   
             ];
             
             $this->redirect('/login');
         }
         
-        if (! password_verify($_POST['password'], $user['password'])) {
+        if (! password_verify($_POST['user_password'], $user['user_password'])) {
             $_SESSION['error'] = [
-                'username' => 'Les identifiants sont incorrects'   
+                'user_name' => 'Les identifiants sont incorrects'   
             ];
             
             $this->redirect('/login');

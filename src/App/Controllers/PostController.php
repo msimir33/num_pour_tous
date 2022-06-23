@@ -13,8 +13,8 @@ class PostController extends AbstractController
         $model = new PostModel();
         $posts = $model->findAll();
         
-        $this->display('events/index', [
-            'events' => $posts    
+        $this->display('posts/index', [
+            'posts' => $posts    
         ]);
     }
     

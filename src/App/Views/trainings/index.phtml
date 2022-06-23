@@ -1,0 +1,18 @@
+<h1>Liste des annonces</h1>
+
+<nav>
+    <a href="<?= url('/trainings/create') ?>" class="btn btn-primary">Ajouter une session de formation</a>
+</nav>
+
+<ul class="list-unstyled">
+    <?php foreach ($trainings as $training) :?>
+        <li>
+            <article>
+                <header>
+                    <h2><a href="<?= url('/trainings/show?id=' . $training['training_id']) ?>"><?= $training['training_title'] ?></a></h2>
+                </header>
+                <?= $training['training_content'] ?>
+            </article>
+        </li>
+    <?php endforeach ?>
+</ul>

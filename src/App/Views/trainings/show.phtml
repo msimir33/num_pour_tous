@@ -1,0 +1,7 @@
+<article>
+    <header>
+        <h1><?= htmlentities($training['training_title']) ?></h1>
+        <small>Débute le <?= date_start($training['training_startdate'])->format('d/m/Y') ?></small>
+    </header>
+    <?= htmlentities($training['training_startdate']) ?>
+</article>

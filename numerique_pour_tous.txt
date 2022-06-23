@@ -29,18 +29,15 @@ LISTE DES FONCTIONNALITES DU SITE
 
 BDD :
 
-table users (user_id, user_password, user_type [admin/customer], user_firstname, user_lastname, user_email, user_age, user_address, user_creation_date, user_income [<15000/an], user_hastaken_training [oui/non], user_hastaken_pack [oui/non])
+table users (user_id, user_password, user_type [admin/client], user_name, user_email, user_age, user_address, user_creation_date, user_income [<15000/an], user_hastaken_training1 [oui/non], user_hastaken_training2 [oui/non] user_hastaken_pack [oui/non])
 
 table posts (post_id, post_title, post_content, post_creation_date, post_isreserved, post_istaken, user_id)
 
-table trainings (training_id, training_name [ordinet/word])
-
-table sessions (session_id, session_name, session_debutdate, session_enddate, training_id, user_id)
+table trainings (training_id, training_title [ordinateur/word], training_content, training_startdate, user_id)
 
 
 
 créer route et controller pour chaque page créée
-rajouter mot de passe dans fichier database
 lancer le projet : page d'accueil...
 commencer par l'inscription et connexion
 reprendre les derniers exos comme base

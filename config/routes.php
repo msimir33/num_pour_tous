@@ -21,6 +21,22 @@ return [
         'App\Controllers\PostController',
         'store'
     ],
+    '/trainings' => [
+        'App\Controllers\TrainingController',
+        'index'
+    ],
+    '/trainings/show' => [
+        'App\Controllers\TrainingController',
+        'show'
+    ],
+    '/trainings/create' => [
+        'App\Controllers\TrainingController',
+        'create'
+    ],
+    '/trainings/store' => [
+        'App\Controllers\TrainingController',
+        'store'
+    ],
     '/register' => [
         'App\Controllers\UserController',
         'register'

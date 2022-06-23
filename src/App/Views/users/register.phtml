@@ -2,21 +2,33 @@
 
 <form method="post" action="<?= url('/users/store') ?>">
     <div class="form-group">
-        <label for="username">Nom utilisateur</label>
-        <input type="text" class="form-control <?php if (flash()->has('username')): ?>is-invalid<?php endif ?>" id="username" name="username">
-        <?php if (flash()->has('username')): ?>
-            <div class="invalid-feedback"><?= flash()->get('username') ?></div>
+        <label for="user_name">Nom d'utilisateur</label>
+        <input type="text" class="form-control <?php if (flash()->has('user_name')): ?>is-invalid<?php endif ?>" id="user_name" name="user_name">
+        <?php if (flash()->has('user_name')): ?>
+            <div class="invalid-feedback"><?= flash()->get('user_name') ?></div>
         <?php endif ?>
     </div>
     <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" name="email">
+        <label for="user_email">Email</label>
+        <input type="user_email" class="form-control" id="user_email" name="user_email">
     </div>
     <div class="form-group">
-        <label for="password">Mot de passe</label>
-        <input type="password" class="form-control <?php if (flash()->has('password')): ?>is-invalid<?php endif ?>" id="password" name="password" placeholder="Au-moins 6 caractères">
-        <?php if (flash()->has('password')): ?>
-            <div class="invalid-feedback"><?= flash()->get('password') ?></div>
+        <label for="user_age">Age</label>
+        <input type="user_age" class="form-control" id="user_age" name="user_age">
+    </div>
+    <div class="form-group">
+        <label for="user_address">Adresse</label>
+        <input type="user_address" class="form-control" id="user_address" name="user_address">
+    </div>
+    <div class="form-group">
+        <label for="user_income">Revenu Fiscal de Référence</label>
+        <input type="user_income" class="form-control" id="user_income" name="user_income">
+    </div>
+    <div class="form-group">
+        <label for="user_password">Mot de passe</label>
+        <input type="user_password" class="form-control <?php if (flash()->has('user_password')): ?>is-invalid<?php endif ?>" id="user_password" name="user_password" placeholder="Au moins 6 caractères">
+        <?php if (flash()->has('user_password')): ?>
+            <div class="invalid-feedback"><?= flash()->get('user_password') ?></div>
         <?php endif ?>
     </div>
     <div class="mt-3">
