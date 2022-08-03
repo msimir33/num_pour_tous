@@ -1,0 +1,250 @@
+* {
+    background-color: aquamarine;
+}
+
+/***HEADER AND FOOTER***/
+
+.header,
+.footer {
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+footer{
+    margin-top: 20vh;
+}
+
+.navbar {
+    width: 100%;
+    height: 20vh;
+    background-color: blue;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+
+.footbar {
+    width: 100%;
+    height: 20vh;
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+
+.navbar-nav {
+    background-color: blue;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2vw;
+}
+
+.social-media-div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: blue;
+    gap: 2vw;
+    margin-right: 1vw;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 3vw;
+    height: 6vh;
+    background-color: blue;
+}
+
+.nav-item {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+}
+
+.nav-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: blue;
+}
+
+.navbar-brand,
+.footbar-brand,
+.footbar-social-media {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 11vw;
+    height: 20vh;
+    border-radius: 10px 0px 0px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.coordonnees {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.coordonnees-2 {
+    background-color: blue;
+}
+
+/***MAIN***/
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.bienvenue {
+    display: flex;
+    justify-content: center;
+}
+
+.texts-section {
+    text-align: center;
+    width: 30%;
+}
+
+h1 {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.first-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4vh;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+}
+
+.border-radius {
+    border-radius: 10px;
+    ;
+}
+
+.first-image-home {
+    display: flex;
+    justify-content: center;
+    float: right;
+}
+
+.second-image-home,
+.third-image-home {
+    display: flex;
+    justify-content: center;
+    float: left;
+}
+
+.firstdiv,
+.seconddiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1.5em;
+}
+
+input {
+    background-color: #fff;
+    border-radius: 5px;
+    height: 5vh;
+    border : 1px solid black;
+}
+
+textarea {
+    background-color: #fff;
+    border-radius: 10px;
+    border : 1px solid black;
+}
