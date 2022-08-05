@@ -20,12 +20,28 @@
             </a>
         </div>
         <div class="texts-section">
-            <p>L'activité de notre association consiste à récupérer des ordinateurs donnés gracieusement ainsi que des imprimantes, nous les réhabilitons si nécessaire et les donnons gratuitement aux foyers nécessiteux. <br><br><a class="bold">Nous les donnons sous forme de pack "ordinateur + imprimante". Nous proposons aussi aux familles des formations gratuites liées à leur utilisation.</a><br><br>Concrètement nous publions des annonces de packs réservables en ligne et à venir récupérer. Les foyers peuvent aussi s'inscrire à 2 formations complémentaires gratuites s'ils le souhaitent :
+            <p>L'activité de notre association consiste à récupérer des ordinateurs donnés gracieusement ainsi que des imprimantes, nous les réhabilitons si nécessaire et les donnons gratuitement aux foyers nécessiteux. <br><br><a class="bold">Nous les donnons sous forme de pack "ordinateur + imprimante". Nous proposons aussi aux familles des formations gratuites liées à leur utilisation.</a><br><br>Concrètement nous publions des annonces de packs réservables en ligne et à venir récupérer. Les foyers peuvent aussi s'inscrire à 2 formations complémentaires gratuites s'ils le souhaitent :<br>
             <ul class="bold">
                 <li>Formation à l'utilisation d'un ordinateur, d'une imprimante et d'internet (30 minutes)</li>
                 <li>Formation à l'utilisation Word (30 minutes)</li>
-            </ul>
-            <a class="bold">Ces deux prestations sont gratuites à condition que le revenu fiscal de référence du foyer soit inférieur à 15 000€, preuve à l'appui.</a>
-            </p>
+            </ul><br>
+            <a class="bold">Ces deux prestations sont gratuites à condition que le revenu fiscal de référence du foyer soit inférieur à un certain montant, preuve à l'appui.</a>
+            </p><br>
+            <div>
+                <p>Testez votre éligibilité en inscrivant votre revenu fiscal :</p>
+
+                <input type="number" id="year-salary">
+
+                <button id="valid-input">Vérifier</button>
+
+                <div class="eligible">
+                    <p class="background-green">Félicitations ! Vous êtes éligible.</p>
+                </div>
+
+                <div class="not-eligible">
+                    <p class="background-red">Malheureusement, vos revenus sont supérieurs à la limite fixée</p>
+                </div>
+
+            </div>
         </div>
 </section>

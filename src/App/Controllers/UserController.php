@@ -12,7 +12,7 @@ class UserController extends AbstractController
         if (auth()->isAuthenticated()) {
             $this->redirect('/');
         }
-        
+
         $this->display('users/register');
     }
     
@@ -23,12 +23,12 @@ class UserController extends AbstractController
         }
         
         $model = new UserModel();
-        $user = $model->findByUsername($_POST['user_name']);
+        $user = $model->findByUserEmail($_POST['user_email']);
         
         $errors = $this->validForm($_POST);
         
         if (! empty($user)) {
-            $errors['user_name'] = "Cet utilisateur existe déjà";
+            $errors['user_email'] = "Cet utilisateur existe déjà";
         }
         
         if (count($errors) > 0) {
@@ -39,7 +39,10 @@ class UserController extends AbstractController
         $model->create([
             'user_name' => $_POST['user_name'],
             'user_email' => $_POST['user_email'],
-            'user_password' => password_hash($_POST['user_password'], PASSWORD_ARGON2ID)
+            'user_age'=> $_POST['user_age'],
+            'user_address'=> $_POST['user_address'],
+            'user_income'=> $_POST['user_income'],
+            'user_password' => (password_hash($_POST['user_password'], PASSWORD_ARGON2ID))
         ]);
         
         $this->redirect('/');
@@ -76,11 +79,11 @@ class UserController extends AbstractController
         }
         
         $model = new UserModel();
-        $user = $model->findByUserName($_POST['user_name']);
+        $user = $model->findByUserEmail($_POST['user_email']);
         
         if ($user === null) {
             $_SESSION['error'] = [
-                'user_name' => 'Les identifiants sont incorrects'   
+                'user_email' => 'Les identifiants sont incorrects'   
             ];
             
             $this->redirect('/login');
@@ -88,13 +91,13 @@ class UserController extends AbstractController
         
         if (! password_verify($_POST['user_password'], $user['user_password'])) {
             $_SESSION['error'] = [
-                'user_name' => 'Les identifiants sont incorrects'   
+                'user_email' => 'Les identifiants sont incorrects'   
             ];
             
             $this->redirect('/login');
         }
         
-        auth()->login($user['id']);
+        auth()->login($user['user_id']);
         
         $this->redirect('/');
     }
@@ -104,4 +107,10 @@ class UserController extends AbstractController
         auth()->logout();
         $this->redirect('/');
     }
+
+    public function myaccount(): void
+    {
+        $this->display('users/myaccount');
+    }
+
 }

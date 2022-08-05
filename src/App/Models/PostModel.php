@@ -2,20 +2,26 @@
 
 namespace App\Models;
 
+use DateTime;
 use Library\Core\AbstractModel;
 
 class PostModel extends AbstractModel
 {
+    private int $post_id;
+    private string $post_title;
+    private string $post_content;
+    private DateTime $post_creation_date;
+
     public function findAll(): array
     {
         return $this->db->getResults(
-            'SELECT post_id, post_title, post_content, post_creation_date
+            'SELECT post_id, post_title, post_content, post_creation_date, reserved_user_id
             FROM posts
             ORDER BY post_creation_date'
         );
     }
 
-    public function find(int $id): ?array
+    public function findByPostId(int $post_id): ?array
     {
         $results = $this->db->getResults(
             'SELECT post_id, post_title, post_content, post_creation_date
@@ -32,14 +38,14 @@ class PostModel extends AbstractModel
         return $results[0];
     }
 
-    public function getUserId(int $id): ?int
+    public function getuser_id(int $user_id): ?int
     {
         $results = $this->db->getResults(
             'SELECT user_id
             FROM users
             WHERE user_id = :user_id',
             [
-                'user_id' => $id
+                'user_id' => $user_id
             ]
         );
 
@@ -50,23 +56,12 @@ class PostModel extends AbstractModel
         return $results[0]['user_id'];
     }
 
-    public function create(array $data): ?int
-    {
-        $userId = $this->getUserId(auth()->isAuthenticated());
-        $result = $this->db->execute(
-            'INSERT INTO posts (post_title, post_content, post_creation_date) VALUES (:post_title, :post_content, :post_creation_date)', [
-                'post_title' => $data['post_title'],
-                'post_content' => $data['post_content'],
-                'post_creation_date' => $data['post_creation_date'],
-                'user_id' => $userId
-            ]
-        );
-        die($result);
+    public function update_post(int $user_id, int $post_id): ?int {
 
-        if ($result === false) {
-            return null;
-        }
-
-        return (int)$result;
+        return $this->db->execute('UPDATE posts SET reserved_user_id = :reserved_user_id WHERE post_id = :post_id', [
+            'reserved_user_id'=> $user_id,
+            'post_id' => $post_id
+        ]);
     }
+    
 }

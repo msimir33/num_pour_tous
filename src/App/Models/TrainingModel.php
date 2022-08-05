@@ -2,26 +2,34 @@
 
 namespace App\Models;
 
+use DateTime;
 use Library\Core\AbstractModel;
 
 class TrainingModel extends AbstractModel
 {
+    private int $training_id;
+    private string $training_type;
+    private string $training_title;
+    private string $training_content;
+    private DateTime $training_startdate;
+
     public function findAll(): array
     {
         return $this->db->getResults(
-            'SELECT training_id, training_title, training_content, training_startdate 
+            'SELECT training_id, training_type, training_title, training_content, training_startdate 
             FROM trainings
             ORDER BY training_startdate'
         );
     }
     
-    public function find(int $id): ?array
+    public function findByTrainingId(int $training_id): ?array
     {
         $results = $this->db->getResults(
-            'SELECT training_id, training_title, training_content, training_startdate 
+            'SELECT training_id, training_type, training_title, training_content, training_startdate 
             FROM trainings
-            WHERE training_id = :training_id', [
-                'training_id' => $training_id    
+            WHERE training_id = :training_id', 
+            [
+                'training_id' => $training_id   
             ]   
         );
         
@@ -32,20 +40,12 @@ class TrainingModel extends AbstractModel
         return $results[0];
     }
     
-    public function create(array $data): ?int
-    {
-        $result = $this->db->execute(
-            'INSERT INTO trainings (training_title, training_content, training_startdate) VALUES (:training_title, :training_content, :training_startdate)', [
-                'training_title' => $data['training_title'],
-                'training_content' => $data['training_content'],
-                'training_startdate' => $data['training_startdate']
-            ]
-        );
-        
-        if ($result === false) {
-            return null;
-        }
-        
-        return (int)$result;
+    public function update_training(int $user_id, int $training_id): ?int {
+
+        return $this->db->execute('UPDATE trainings SET reserved_user_id2 = :reserved_user_id2 WHERE training_id = :training_id', [
+            'reserved_user_id2'=> $user_id,
+            'training_id' => $training_id
+        ]);
     }
+    
 }

@@ -1,18 +1,18 @@
 <h1>Liste des annonces</h1>
 
-<nav>
-    <a href="<?= url('/posts/create') ?>" class="btn btn-primary">Ajouter une annonce</a>
-</nav>
-
-<ul class="list-unstyled">
-    <?php foreach ($posts as $post) :?>
-        <li>
-            <article>
-                <header>
-                    <h2><a href="<?= url('/posts/show?id=' . $post['post_id']) ?>"><?= $post['post_title'] ?></a></h2>
-                </header>
-                <?= $post['post_content'] ?>
-            </article>
-        </li>
-    <?php endforeach ?>
-</ul>
+<div class="items-table">
+    <?php foreach ($posts as $post) : ?>
+        <?php if ($post['reserved_user_id'] === '0'): ?>
+        <div class="square">
+                <h2><?= $post['post_title'] ?></h2>
+            <?= $post['post_content'] ?>
+            <?php if (isset($_SESSION["user_id"])) : ?>
+                <form method="post" action="">
+                    <input type="number" name="post_id" value="<?= $post['post_id'] ?>" class="hidden">
+                    <button type="submit" class="btn btn-primary reservation" name="post-btn">Réserver</button>
+                </form>
+            <?php endif; ?>
+        </div>
+        <?php endif; ?>
+    <?php endforeach; ?>
+</div>

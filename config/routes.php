@@ -9,33 +9,9 @@ return [
         'App\Controllers\PostController',
         'index'
     ],
-    '/posts/show' => [
-        'App\Controllers\PostController',
-        'show'
-    ],
-    '/posts/create' => [
-        'App\Controllers\PostController',
-        'create'
-    ],
-    '/posts/store' => [
-        'App\Controllers\PostController',
-        'store'
-    ],
     '/trainings' => [
         'App\Controllers\TrainingController',
         'index'
-    ],
-    '/trainings/show' => [
-        'App\Controllers\TrainingController',
-        'show'
-    ],
-    '/trainings/create' => [
-        'App\Controllers\TrainingController',
-        'create'
-    ],
-    '/trainings/store' => [
-        'App\Controllers\TrainingController',
-        'store'
     ],
     '/register' => [
         'App\Controllers\UserController',
@@ -44,6 +20,10 @@ return [
     '/login' => [
         'App\Controllers\UserController',
         'login'
+    ],
+    '/myaccount' => [
+        'App\Controllers\UserController',
+        'myaccount'
     ],
     '/users/store' => [
         'App\Controllers\UserController',

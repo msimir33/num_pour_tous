@@ -21,23 +21,21 @@ Ces deux prestations sont gratuites à condition que le revenu fiscal de référ
 
 LISTE DES FONCTIONNALITES DU SITE
 - Créer un compte utilisateur
-- Créer un compte admin (admin seulement)
-- Créer une annonce pack (admin seulement)
-- Créer une session de formation (admin seulement)
 - Inscription à une session de formation
 - Réserver un pack
 
 BDD :
 
-table users (user_id, user_password, user_type [admin/client], user_name, user_email, user_age, user_address, user_creation_date, user_income [<15000/an], user_incomedoc, user_hastaken_training1 [oui/non], user_hastaken_training2 [oui/non] user_hastaken_pack [oui/non])
+table users (user_id, user_password, user_type, user_name, user_email, user_address, user_creation_date, user_income, user_hastaken_ordi_training, user_hastaken_word_training [oui/non] user_hastaken_pack)
 
-table posts (post_id, post_title, post_content, post_creation_date, post_isreserved, post_istaken, user_id)
+table posts (post_id, post_title, post_content, post_creation_date, post_isreserved, user_id)
 
-table trainings (training_id, training_title [ordinateur/word], training_content, training_startdate, user_id)
+table trainings (training_id, training_type, training_title [ordinateur/word], training_content, training_startdate, user_id)
 
 
 
-créer route et controller pour chaque page créée
-lancer le projet : page d'accueil...
-commencer par l'inscription et connexion
-reprendre les derniers exos comme base
+DERNIERES FONCTIONNALITES A CODER :
+
+- Créer la page du compte connecté (admin et client) et intégrer les fonctionnalités suivantes: 
+	- COMPTE ADMIN : bouton créer une annonce, bouton créer une session de 				formation, les pages posts/create.phtml et 						trainings/create.phtml accesibles uniquement par l'admin
+	- COMPTE CLIENT : bouton réserver une annonce, bouton s'inscrire à une 				session de formation, afficher dans le client : "vous êtes 		inscrit à la formation 'training_id'" et "vous avez reservé 		l'annonce 'post_id'" UNE FOIS QUE LE CLIENT EST CONNECTE
