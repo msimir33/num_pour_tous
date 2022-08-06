@@ -36,6 +36,7 @@ try {
     } else {
         throw new NotFoundException("La route n'existe pas");
     }
+    
 } catch (Exception $e) {
     if ($e instanceof NotFoundException) {
         // Page 404
