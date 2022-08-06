@@ -1,5 +1,7 @@
 <?php
 
+/*FONCTIONS UTILITAIRES URL, FLASH ET AUTH*/
+
 use Library\Session\Flashbag;
 use Library\Auth\Authentifier;
 
@@ -8,11 +10,11 @@ function url(string $path): string
     return $_SERVER['SCRIPT_NAME'] . $path;
 }
 
-function dd(...$vars): void
-{
-    var_dump(...$vars);
-    exit();
-}
+// function dd(...$vars): void
+// {
+//     var_dump(...$vars);
+//     exit();
+// }
 
 function flash(): Flashbag
 {

@@ -283,7 +283,6 @@ textarea {
 .eligible,
 .not-eligible {
     display: none;
-
     color: white;
     width: 15vw;
     height: 10vh;

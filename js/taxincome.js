@@ -8,6 +8,7 @@ export const button = document.getElementById("valid-input");
 export const displayPopup = () => {
 
     /*EXECUTION DE LA FONCTION PERMETTANT DE RENDRE INVISIBLE TOUS LES POPUPS POUR VIDER LA DIV*/
+    
     putAllPopupDisplayNone();
 
     if (input.value < 15000) {
