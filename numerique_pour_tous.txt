@@ -22,11 +22,11 @@ Ces deux prestations sont gratuites à condition que le revenu fiscal de référ
 LISTE DES FONCTIONNALITES DU SITE
 - Créer un compte utilisateur
 - Inscription à une session de formation
-- Réserver un pack
+- Réserver une annonce
 
 BDD :
 
-table users (user_id, user_password, user_type, user_name, user_email, user_address, user_creation_date, user_income)
+table users (user_id, user_password, user_name, user_email, user_address, user_creation_date, user_income)
 
 table posts (post_id, post_title, post_content, post_creation_date, user_id, reserved_post)
 
