@@ -1,18 +1,20 @@
-<h1>Liste des annonces</h1>
+<!--AFFICHAGE DES ANNONCES DISPONIBLES-->
+
+<h2>Liste des annonces</h2>
 
 <div class="items-table">
     <?php foreach ($posts as $post) : ?>
-        <?php if ($post['reserved_user_id'] === '0'): ?>
-        <div class="square">
-                <h2><?= $post['post_title'] ?></h2>
-            <?= $post['post_content'] ?>
-            <?php if (isset($_SESSION["user_id"])) : ?>
-                <form method="post" action="">
-                    <input type="number" name="post_id" value="<?= $post['post_id'] ?>" class="hidden">
-                    <button type="submit" class="btn btn-primary reservation" name="post-btn">Réserver</button>
-                </form>
-            <?php endif; ?>
-        </div>
+        <?php if ($post['reserved_post'] === '0') : ?>
+            <div class="square">
+                <h3><?= $post['post_title'] ?></h3>
+                <?= $post['post_content'] ?>
+                <?php if (isset($_SESSION["user_id"])) : ?>
+                    <form method="post" action="">
+                        <input type="number" name="post_id" value="<?= $post['post_id'] ?>" class="hidden">
+                        <button type="submit" class="btn btn-primary reservation" name="reserve-post-btn">Réserver</button>
+                    </form>
+                <?php endif; ?>
+            </div>
         <?php endif; ?>
     <?php endforeach; ?>
 </div>

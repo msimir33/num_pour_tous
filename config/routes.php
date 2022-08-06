@@ -1,5 +1,8 @@
 <?php
 
+
+/*ROUTES ET ARBORESCENCE*/
+
 return [
     '/' => [
         'App\Controllers\HomeController',

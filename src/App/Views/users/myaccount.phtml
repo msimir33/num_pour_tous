@@ -1,20 +1,28 @@
-<h1>Bienvenue dans votre compte personnel</h1>
+<!--AFFICHAGE DU COMPTE PERSONNEL DE L'UTILISATEUR CONNECTE-->
 
-<section class="my-account">
-    <div class="no-post-reserved">
-        <p>Vous n'avez réservé aucune annonce</p>
-    </div>
-    <div class="post-reserved">
-        <p>Vous avez reservé l(es)'annonce(s) suivante(s) : 
-            <?php ?>
-    </p>
-    </div>
-    <div class="no-training-reserved">
-        <p>Vous n'êtes inscrit à aucune formation</p>
-    </div>
-    <div class="training-reserved">
-        <p>Vous êtes inscrit à la (aux) formation(s) suivante(s) : 
-            
-        </p>
-    </div>
-</section>
+<h2>Bienvenue dans votre compte personnel Utilisateur n°<?= ($_SESSION['user_id']) ?></h2>
+
+<div class="items-table">
+    <?php foreach ($posts as $post) : ?>
+        <?php if ($post['reserved_post'] === strval($_SESSION['user_id'])) : ?>
+            <div class="square">
+                <p>Vous avez reservé l'(es)annonce(s) suivante(s) :
+                </p>
+                <h3><?= $post['post_title'] ?></h3>
+                <?= $post['post_content'] ?>
+            </div>
+        <?php endif; ?>
+    <?php endforeach; ?>
+</div>
+<div class="items-table">
+    <?php foreach ($trainings as $training) : ?>
+        <?php if ($training['reserved_training'] === strval($_SESSION['user_id'])) : ?>
+            <div class="square">
+                <p>Vous êtes inscrit à (aux) formation(s) suivante(s) :
+                </p>
+                <h3><?= $training['training_title'] ?></h3>
+                <?= $training['training_content'] ?>
+            </div>
+        <?php endif; ?>
+    <?php endforeach; ?>
+</div>

@@ -15,7 +15,7 @@ class UserModel extends AbstractModel
 
     /*SETTERS*/
 
-    public function setuser_id(string $user_id)
+    public function setuser_id(int $user_id)
     {
         $this->user_id = $user_id;
     }
@@ -47,7 +47,7 @@ class UserModel extends AbstractModel
 
     /*GETTERS*/
 
-    public function getuser_id(): string
+    public function getuser_id(): int
     {
         return $this->user_id;
     }
@@ -77,12 +77,13 @@ class UserModel extends AbstractModel
         return $this->user_password;
     }
 
+    /*FONCTION PERMETTANT D'INSERER LES INFRMATIONS D'INSCRIPTION DANS LA TABLE USERS*/
+
     public function create(array $data): ?int
     {
-        $userId = $this->db->execute('INSERT INTO users (user_name, user_email, user_address, user_income,  user_password) VALUES (:user_name, :user_email, :user_age, :user_address, :user_income, :user_password)', [
+        $userId = $this->db->execute('INSERT INTO users (user_name, user_email, user_address, user_income, user_password) VALUES (:user_name, :user_email, :user_address, :user_income, :user_password)', [
             'user_name' => $data['user_name'],
             'user_email' => $data['user_email'],
-            'user_age' => $data['user_age'],
             'user_address' => $data['user_address'],
             'user_income' => $data['user_income'],
             'user_password' => $data['user_password']
@@ -94,6 +95,8 @@ class UserModel extends AbstractModel
 
         return $userId;
     }
+
+    /*FONCTION PERMETTANT DE RECUPERER TOUS LES CHAMPS DE LA TABLE USERS PAR LE CHAMP EMAIL*/
 
     public function findByUserEmail(string $user_email): ?array
     {

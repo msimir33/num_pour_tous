@@ -1,5 +1,6 @@
 <?php
 
+/*ACCES A LA BASE DE DONNEES*/
 return [
     'host' => 'db.3wa.io',
     'dbname' => 'samiraitali_numpourtous',

@@ -1,4 +1,4 @@
-// Mes variables
+/*MES VARIABLES*/
 
 const input = document.getElementById("year-salary");
 const eligible = document.querySelector(".eligible");
@@ -7,7 +7,7 @@ export const button = document.getElementById("valid-input");
 
 export const displayPopup = () => {
 
-    // Je mets toutes les popup en display none au cas où il y en ait déjà une visible
+    /*EXECUTION DE LA FONCTION PERMETTANT DE RENDRE INVISIBLE TOUS LES POPUPS POUR VIDER LA DIV*/
     putAllPopupDisplayNone();
 
     if (input.value < 15000) {
@@ -17,6 +17,8 @@ export const displayPopup = () => {
     }
 
 }
+
+/*FONCTION FLECHEE RENDANT INVISIBLE TOUTES LES DIV*/
 
 const putAllPopupDisplayNone = () => {
     eligible.style.display = "none";

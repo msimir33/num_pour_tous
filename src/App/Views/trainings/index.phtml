@@ -1,18 +1,20 @@
-<h1>Liste des sessions de formation</h1>
+<!--AFFICHAGE DES SESSIONS DE FORMATION DISPONIBLES-->
+
+<h2>Liste des sessions de formation</h2>
 
 <div class="items-table">
     <?php foreach ($trainings as $training) : ?>
-        <div class="square">
-            <header>
-                <h2><?= $training['training_title'] ?></h2>
-            </header>
-            <?= $training['training_content'] ?>
-            <?php if (isset($_SESSION["user_id"])) : ?>
-                <form method="post" action="">
-                    <input type="number" name="training_id" value="<?= $training['training_id'] ?>" class="hidden">
-                    <button type="submit" class="btn btn-primary reservation" name="training-btn">S'inscrire</button>
-                </form>
-            <?php endif ?>
-        </div>
-    <?php endforeach ?>
+        <?php if ($training['reserved_training'] === '0') : ?>
+            <div class="square">
+                <h3><?= $training['training_title'] ?></h3>
+                <?= $training['training_content'] ?>
+                <?php if (isset($_SESSION["user_id"])) : ?>
+                    <form method="post" action="">
+                        <input type="number" name="training_id" value="<?= $training['training_id'] ?>" class="hidden">
+                        <button type="submit" class="btn btn-primary reservation" name="reserve-training-btn">S'inscrire</button>
+                    </form>
+                <?php endif; ?>
+            </div>
+        <?php endif; ?>
+    <?php endforeach; ?>
 </div>
