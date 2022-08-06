@@ -6,6 +6,7 @@ use Library\Core\AbstractController;
 use App\Models\TrainingModel;
 
 class TrainingController extends AbstractController
+
 {
     /*AFFICHAGE DE LA PAGE DES FORMATIONS EN PASSANT PAR LE FICHIER routes.php*/
 
